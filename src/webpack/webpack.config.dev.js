@@ -1,63 +1,77 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
+  mode: 'none',
+  devtool: 'inline-source-map',
   entry: {
-    index: "./src/index.js",
+    index: '/src/index.js',
   },
-  mode: "none",
-  devtool: "inline-source-map",
-  devServer: {
-    port: 3000,
-    static: "./dist",
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: "Development",
-    }),
-  ],
   output: {
-    filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "dist"),
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
     clean: true,
-    publicPath: "/",
-  },
-  resolve: {
-    extensions: [".js"],
+    publicPath: '/',
   },
   optimization: {
-    runtimeChunk: "single",
+    runtimeChunk: 'single',
+  },
+  watchOptions: {
+    ignored: '/node_modules/',
+  },
+  resolve: {
+    extensions: ['.js'],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Homepage",
-      filename: "index.html",
-      template: "index.html",
+      title: 'Homepage',
+      filename: 'index.html',
+      template: '/src/index.html',
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
   module: {
     rules: [
       {
         test: /\.scss$/,
         use: [
-          { loader: "style-loader" },
+          { loader: 'style-loader' },
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
-              modules: true,
+              modules: {
+                auto: true,
+              },
             },
           },
-          { loader: "sass-loader" },
+          { loader: 'sass-loader' },
         ],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
+        type: 'asset/inline',
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+            },
+          },
+        ],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: "asset/resource",
+        type: 'asset/resource',
       },
     ],
+  },
+  devServer: {
+    port: 3000,
+    open: true,
+    hot: true,
+    watchFiles: {
+      paths: ['src/*.html'],
+    },
   },
 };
