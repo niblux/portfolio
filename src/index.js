@@ -1,15 +1,5 @@
-import "./styles/styles.scss";
+import './styles/styles.scss';
+// TODO:  create image/assets folder
+import img from './avatar.jpg';
 
-
-function displayContent() {
-  const newDiv = document.createElement("div");
-  const newContent = document.createTextNode("Welcome to a nice simple webpack Starter");
-
-  newDiv.appendChild(newContent);
-
-  const container = document.getElementById("container");
-
-  document.body.insertBefore(newDiv, container);
-}
-
-displayContent();
+console.log('JS');
