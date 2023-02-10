@@ -1,0 +1,27 @@
+.contact-me  {
+    border: solid 2px blue;
+    display: flex;
+    flex-flow:column wrap;
+    align-content: center;
+    text-align: center;
+  
+    h1 {
+      font-size: 50px;
+      margin: 20px 0;
+    }
+  
+    button {
+      padding:10px;
+      border-radius: 5px;
+      font-size:30px;
+      background: none;
+      border: 1px solid teal;
+      width: 300px;
+      margin: 0 auto;
+  
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }

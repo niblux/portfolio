@@ -1,0 +1,37 @@
+.projects {
+    border: solid 2px blue;
+  
+    & .project-item {
+      display: grid;
+      grid-template-columns: repeat(12,minmax(0,1fr));
+      gap:2%;
+  
+      & .project-info {
+        border: solid 2px green;
+        grid-column: span 6 / span 6;
+        margin: 100px 0;
+        padding: 5px;
+  
+        & .project-card {
+          border: solid 2px pink;
+          border-radius: 5px;
+          padding:5px;
+        }
+  
+        & ul.project-tech-list {
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: space-evenly;
+          padding: 0;
+          margin-left: -40px;
+        }
+      }
+  
+      & .project-image {
+        border: solid 2px red;
+        border-radius: 5px;
+        grid-column: span 6 / span 6;
+      }
+    }
+  }
+  

@@ -1,0 +1,103 @@
+// Hamburger Mobile Menu 
+.mobile-menu {
+    display: flex;
+    height: 100vh;
+    width: min(50vw, 400px);
+    background: teal;
+    position: absolute;
+    right: 0;
+    display: none;
+    // TODO: add ease in animation.
+  }
+  
+  .ham-wrapper {
+    min-height: 58px;
+    width: 58px;
+    height: 58px;
+    position: absolute;
+    right: 0;
+    margin: 20px 10px;
+    display: none;
+    z-index: 1;
+  }
+  
+  .hamburger {
+   position:relative;
+   display:inline-block;
+  }
+  
+  .ham-inner, .ham-inner::before, .ham-inner::after {
+   display:inline-block;
+   position:absolute;
+   width:58px;
+   height:4px;
+   background-color:black;
+   content: ' ';
+   border-radius:4px;
+  }
+  
+  .ham-inner::before {
+   top:20px;
+  }
+  
+  .ham-inner::after {
+   top:-20px;
+  }
+  
+  
+  .transform-after.ham-inner::after, .transform-after.ham-inner::before, .ham-inner {
+   transition-timing-function: ease-out;
+   transition-duration: 0.25s;
+   transition-property: transform;
+  }
+  
+  .transform-after.ham-inner::after {
+   transform: rotate(-50deg);
+   top:0px;
+   opacity:1;
+  }
+  
+  .transform-before.ham-inner::before {
+   transform: rotate(50deg);
+   top:0px;
+   opacity:1;
+  }
+  
+  .transform-after.ham-inner {
+   transform: rotate(360deg);
+   top:0px;
+   opacity:1;
+  }
+  
+  .close {
+   display: none;
+  }
+  
+  .open {
+   display: block;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .ham-wrapper {
+      display: block;
+    }
+  
+    header {
+      display: none;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .ham-wrapper {
+      display: none;
+    }
+  
+    header {
+      display: block;
+    }
+  
+    .mobile-menu {
+      display: none;
+    }
+  }
