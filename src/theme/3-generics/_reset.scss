@@ -2,6 +2,8 @@ html {
   width: 100%;
   scroll-behavior: smooth;
   box-sizing: border-box;
+  // Setting font size on root to make it easier to calculate ems vs pxs
+  font-size: 62.5%;
 }
 *,
 *::before,

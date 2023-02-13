@@ -21,6 +21,12 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
+
+        <div class="ham-wrapper">
+          <div class="hamburger">
+            <div class="ham-inner"></div>
+          </div>
+        </div>
       </header>
 
       <aside class="mobile-menu">
@@ -30,31 +36,29 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </aside>
-      <div class="ham-wrapper">
-        <div class="hamburger">
-          <div class="ham-inner"></div>
-        </div>
-      </div>
 
       <div id="main">
         <section class="cta-intro">
-          <!-- change in different lanuages or colors periodically, change greetings, Hello, Hi, Welcome, How are you today ? Nice to meet you -->
-          <p>Hello, nice to meet you. My name is</p>
-          <h1>Nabil Elidrissi</h1>
-          <!-- Add Blockqupte look up semantics -->
-          <p>
-            I am frontend Software engineer from London living in Surrey,
-            specialising in Angular.
-          </p>
+          <div class="cta-content">
+            <!-- change in different lanuages or colors periodically, change greetings, Hello, Hi, Welcome, How are you today ? Nice to meet you -->
+            <p>Hello, nice to meet you. My name is</p>
+            <p>Nabil Elidrissi</p>
+            <!-- Add Blockqupte look up semantics -->
+            <p>
+              I am frontend Software engineer from London living in Surrey,
+              specialising in Angular.
+            </p>
+          </div>
 
-          <div class="avatar">
-            <!-- <img src="../src/avatar.jpg" alt="" /> -->
+          <div class="cta-avatar">
+            <img src="../src/avatar.jpg" alt="" />
           </div>
         </section>
 
         <h2 id="about">About</h2>
         <section class="about">
           <!-- change in different lanuages or colors periodically, change greetings, Hello, Hi, Welcome, How are you today ? Nice to meet you -->
+
           <div class="about-intro">
             <p>
               <span class="hello">Hello</span>, nice to meet you, if the
@@ -81,7 +85,10 @@
               <li>I write code that is well tested and blah blah</li>
             </ul>
           </div>
-          <div class="profile-img"></div>
+
+          <div class="profile-img">
+            <img src="../src/me.jpeg" alt="" />
+          </div>
         </section>
 
         <h2 id="experience">Experience</h2>
@@ -93,7 +100,9 @@
           <input type="radio" name="j" id="j5" />
           <nav>
             <ul>
-              <li><label for="j1">ESG Book</label></li>
+              <li>
+                <label for="j1"><p>ESG Book</p></label>
+              </li>
               <li><label for="j2">Paybase</label></li>
               <li><label for="j3">3D Repo</label></li>
               <li><label for="j4">Smith and Byford</label></li>
@@ -180,7 +189,9 @@
               </ul>
             </div>
 
-            <div class="project-image"></div>
+            <div class="project-image">
+              <img src="../src/laptop.jpg" alt="" />
+            </div>
           </article>
         </section>
 
