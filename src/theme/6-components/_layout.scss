@@ -7,62 +7,52 @@ body {
   width: 100%;
   min-height: 100%;
   overflow-x: hidden;
+  font-size: 1.6rem;
+  position: relative;
 }
 
 section {
-  padding: 100px 0;
-  margin: 50px auto;
-  height: 60vh;
-  min-height: 60vh;
+  padding: 200px 0;
+  // margin: 50px auto;
+  // height: 60vh;
+  // min-height: 60vh;
 }
 
 #container {
-  display: grid;
-  grid-template-rows: 1fr auto;
-  grid-template-columns: 100%;
-}
-
-header {
-  border: solid 1px rebeccapurple;
-  display: flex;
-  justify-content: space-between;
-  padding: 15px;
-
-  nav ul {
-    display: flex;
-    background: red;
-    li {
-      flex-direction: column;
-      padding-left: 20px;
-      list-style: none;
-    }
-  }
+  // display: grid;
+  // grid-template-rows: 1fr auto;
+  // grid-template-columns: 100%;
 }
 
 #main {
+  // display: grid;
+  // grid-template-rows: 1fr auto;
+  // grid-template-columns: 100%;
   margin: 0 auto;
   width: 100%;
   max-width: 1600px;
   min-height: 100vh;
-  padding: 200px 150px;
-  position: relative;
+  // padding: 200px 150px;
 
   & .cta-intro {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    flex-direction: column;
-    align-items: flex-start;
-    border: solid 2px green;
+    border: solid 2px yellow;
 
-    & h1 {
-      font-size: 80px;
-      margin: 20px 0px;
+    .cta-content {
+      background-color: aqua;
+
+      & p:nth-of-type(2) {
+        font-size: 6.2em;
+        margin: 20px 0px;
+      }
     }
 
-    img {
-      width: 200px;
-      border-radius: 100%;
+    .cta-avatar {
+      background-color: chartreuse;
+
+      img {
+        width: 250px;
+        object-fit: cover;
+      }
     }
   }
 }
@@ -86,10 +76,6 @@ header {
 
 .about {
   border: solid 2px orange;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(1, 1fr);
-  gap: 2%;
   padding: 50px;
 
   p span.hello {
@@ -97,8 +83,43 @@ header {
   }
 
   .profile-img {
-    border: solid 1px green;
-    height: 300px;
-    flex-basis: 20%;
+    // max-width: 250px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+
+@media(min-width:320px) {
+
+  section {
+    padding: 100px 0px;
+  }
+
+  .cta-avatar {
+    display: flex;
+    justify-content: center;
+  }
+
+  .about {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+  }
+}
+
+@media(min-width:768px) {
+  .cta-intro {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+  }
+
+  .about {
+    .about-intro {
+      flex-basis: 60%;
+    }
   }
 }

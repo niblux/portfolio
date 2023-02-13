@@ -2,11 +2,12 @@
 .mobile-menu {
   display: flex;
   height: 100vh;
-  width: min(50vw, 400px);
+  width: min(70vw, 80%);
   background: teal;
   position: absolute;
   right: 0;
   display: none;
+  z-index: 1;
   // TODO: add ease in animation.
 }
 
@@ -16,6 +17,7 @@
   height: 58px;
   position: absolute;
   right: 0;
+  top: -10px;
   margin: 20px 10px;
   display: none;
   z-index: 1;
@@ -24,6 +26,7 @@
 .hamburger {
   position: relative;
   display: inline-block;
+  right: -20px;
 }
 
 .ham-inner,
@@ -31,19 +34,19 @@
 .ham-inner::after {
   display: inline-block;
   position: absolute;
-  width: 58px;
-  height: 4px;
+  width: 40px;
+  height: 2px;
   background-color: black;
   content: ' ';
   border-radius: 4px;
 }
 
 .ham-inner::before {
-  top: 20px;
+  top: 10px;
 }
 
 .ham-inner::after {
-  top: -20px;
+  top: -10px;
 }
 
 .transform-after.ham-inner::after,
@@ -80,12 +83,22 @@
   display: block;
 }
 
+.blur {
+  filter: blur(5px) brightness(0.7);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
 @media (max-width: 768px) {
   .ham-wrapper {
     display: block;
   }
 
-  header {
+  #container header nav {
+    display: none;
+  }
+
+  .social,
+  .contact-email {
     display: none;
   }
 }
@@ -95,7 +108,7 @@
     display: none;
   }
 
-  header {
+  header>nav {
     display: block;
   }
 
